@@ -11,7 +11,8 @@ from allure_commons.types import AttachmentType
 @allure.severity(Severity.CRITICAL)
 @allure.label('owner', 'DmanYV')
 @allure.feature('Задачи в репозитории')
-@allure.story('Авторизованный пользователь может создать задачу в репозитории, без шагов')
+@allure.story('Авторизованный пользователь может создать задачу в репозитории,'
+              ' без шагов')
 @allure.link('https://github.com', name='Testing')
 def test_github(open_browser):
     browser.open('https://github.com/')
@@ -27,7 +28,8 @@ def test_github(open_browser):
 @allure.severity(Severity.BLOCKER)
 @allure.label('owner', 'DmanYV')
 @allure.feature('Задачи в репозитории')
-@allure.story('Авторизованный пользователь может создать задачу в репозитории, с лямбда шагами')
+@allure.story('Авторизованный пользователь может создать задачу в репозитории,'
+              ' с лямбда шагами')
 @allure.link('https://github.com', name='Testing')
 def test_dinamic_steps(open_browser):
     with allure.step('Открываем главную страницу'):
@@ -48,14 +50,16 @@ def test_dinamic_steps(open_browser):
         s(by.partial_text('#1')).should(be.visible)
 
     with allure.step('Создаем скриншот'):
-        allure.attach(browser.driver.get_screenshot_as_png(), name='Screen', attachment_type=AttachmentType.PNG)
+        allure.attach(browser.driver.get_screenshot_as_png(),
+                      name='Screen', attachment_type=AttachmentType.PNG)
 
 
 @allure.tag('web')
 @allure.severity(Severity.NORMAL)
 @allure.label('owner', 'DmanYV')
 @allure.feature('Задачи в репозитории')
-@allure.story('Авторизованный пользователь может создать задачу в репозитории, с декораторами')
+@allure.story('Авторизованный пользователь может создать задачу в репозитории,'
+              ' с декораторами')
 @allure.link('https://github.com', name='Testing')
 def test_decorator_steps(open_browser):
     open_main_page()

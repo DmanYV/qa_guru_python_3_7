@@ -23,6 +23,7 @@ def search_for_repository(repo):
     s('.header-search-input').send_keys('DmanYV/qa_guru_python_3_7')
     s('.header-search-input').submit()
 
+
 @allure.step('переходим по ссылке репозитория {repo}')
 def go_to_repository(repo):
     s(by.link_text(repo)).click()

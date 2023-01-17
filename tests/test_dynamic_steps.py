@@ -20,5 +20,3 @@ def test_dynamic_steps_github(open_browser):
 
     with allure.step('Проверяем наличие Issues с номером 1'):
         s(by.partial_text('#1')).should(be.visible)
-
-
